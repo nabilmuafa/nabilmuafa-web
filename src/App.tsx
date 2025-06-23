@@ -1,9 +1,24 @@
-import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa"
-import SocialLink from "./components/links/social-link"
+import { useRef } from "react";
+import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
+import SocialLink from "./components/links/social-link";
+import { Squares } from "@/components/ui/squares-background";
 
 function App() {
+  const mainContentRef = useRef(null);
+
   return (
-    <main className="flex flex-col justify-between items-center h-screen font-roboto-mono">
+    <main
+      ref={mainContentRef}
+      className="relative z-10 flex flex-col justify-between items-center h-screen font-roboto-mono">
+      <Squares
+        className="fixed inset-0 -z-10"
+        direction="diagonal"
+        speed={0.5}
+        squareSize={40}
+        borderColor="#bbb"
+        hoverFillColor="#ddd"
+        mouseTargetRef={mainContentRef}
+      />
       <div className="flex items-center flex-1">
         <div className="flex flex-col gap-4 font-bold text-6xl text-center">
           <p>🏗️ UNDER</p>
