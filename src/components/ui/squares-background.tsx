@@ -7,7 +7,7 @@ interface SquaresProps {
   squareSize?: number
   hoverFillColor?: string
   className?: string
-  mouseTargetRef?: React.RefObject<HTMLElement>
+  mouseTargetRef?: React.RefObject<null | HTMLElement>
 }
 
 export function Squares({
