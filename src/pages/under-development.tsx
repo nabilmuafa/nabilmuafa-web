@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaGithub, FaEnvelope } from "react-icons/fa";
 import SocialLink from "@/components/links/social-link";
 import { Squares } from "@/components/ui/squares-background";
 
@@ -52,7 +52,16 @@ const UnderDevelopment = (): React.JSX.Element => {
 				</div>
 			</div>
 			<div>
-				<p className="text-sm mb-4">nabilmuafa.com</p>
+				<div className="flex items-center gap-2 text-sm mb-4">
+					<span>nabilmuafa.com | </span>
+					<a
+						className="flex items-center gap-2 hover:underline"
+						href="mailto:contact@nabilmuafa.com"
+					>
+						<FaEnvelope />
+						<span>contact@nabilmuafa.com</span>
+					</a>
+				</div>
 			</div>
 		</main>
 	)
