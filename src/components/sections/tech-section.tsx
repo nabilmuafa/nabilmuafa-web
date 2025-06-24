@@ -31,7 +31,7 @@ export const TechSection = (): React.JSX.Element => {
     ],
   ];
   return (
-    <section className="flex items-center gap-4">
+    <div className="flex items-center gap-4">
       <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
         <OrbitingCircles iconSize={40}>
           {technologies[2].map((item) => {
@@ -65,6 +65,6 @@ export const TechSection = (): React.JSX.Element => {
           demonstrating high adaptability and flexibility.
         </p>
       </div>
-    </section>
+    </div>
   );
 };

@@ -19,7 +19,7 @@ export const HeroSection = (): React.JSX.Element => {
   ];
 
   return (
-    <motion.section
+    <motion.div
       initial={{ opacity: 0, y: 150 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -27,7 +27,7 @@ export const HeroSection = (): React.JSX.Element => {
         ease: [0.23, 0.86, 0.39, 0.96],
         opacity: { duration: 1.2 },
       }}
-      className="flex justify-center mt-28 mb-12"
+      className="flex justify-center pt-24 mb-12"
     >
       <div className="text-center font-medium max-w-3xl">
         <div className="text-6xl">
@@ -43,6 +43,6 @@ export const HeroSection = (): React.JSX.Element => {
           Flag competitions.
         </div>
       </div>
-    </motion.section>
+    </motion.div>
   );
 };

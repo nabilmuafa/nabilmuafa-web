@@ -2,13 +2,13 @@
 
 import * as React from "react";
 import { AnimatePresence, motion, type Transition } from "framer-motion";
-import useOnClickOutside from "@/hooks/use-on-click-outside";
 import { cn } from "@/lib/utils";
 import { type LucideIcon } from "lucide-react";
 
 interface Tab {
   title: string;
   icon: LucideIcon;
+  href: string;
   type?: never;
 }
 
@@ -22,6 +22,7 @@ type TabItem = Tab | Separator;
 
 interface ExpandableTabsProps {
   tabs: TabItem[];
+  observerRefs: React.RefObject<Array<HTMLElement | null>>;
   className?: string;
   activeColor?: string;
   onChange?: (index: number | null) => void;
@@ -55,22 +56,71 @@ const transition: Transition = {
 
 export function ExpandableTabs({
   tabs,
+  observerRefs,
   className,
   activeColor = "text-primary",
   onChange,
 }: ExpandableTabsProps) {
-  const [selected, setSelected] = React.useState<number | null>(null);
-  const outsideClickRef = React.useRef<HTMLDivElement>(null);
+  const [selected, setSelected] = React.useState<number | null>(0);
+  const observers = React.useRef<IntersectionObserver[]>([]);
 
-  useOnClickOutside(outsideClickRef, () => {
-    setSelected(null);
-    onChange?.(null);
-  });
+  const isClickScrolling = React.useRef(false);
+  const scrollTimeout = React.useRef<NodeJS.Timeout | null>(null);
 
   const handleSelect = (index: number) => {
+    isClickScrolling.current = true;
+
     setSelected(index);
     onChange?.(index);
+
+    if (scrollTimeout.current) {
+      clearTimeout(scrollTimeout.current);
+    }
+
+    scrollTimeout.current = setTimeout(() => {
+      isClickScrolling.current = false;
+    }, 1000);
   };
+
+  React.useEffect(() => {
+    const observerCallback = async (
+      e: IntersectionObserverEntry[],
+      index: number,
+    ) => {
+      if (isClickScrolling.current) return;
+      if (e[0]?.isIntersecting) {
+        setSelected(index);
+      }
+    };
+
+    const observerOptions: IntersectionObserverInit = {
+      root: null,
+      rootMargin: "-50% 0px -50% 0px",
+      threshold: 0,
+    };
+
+    if (observerRefs.current?.length && observers.current) {
+      observerRefs.current.forEach((ref, index) => {
+        if (ref) {
+          const observer = new IntersectionObserver(
+            (e) => observerCallback(e, index),
+            observerOptions,
+          );
+          observer.observe(ref);
+          observers.current[index] = observer;
+        }
+      });
+    }
+
+    const currentObservers = observers.current;
+
+    return () => {
+      currentObservers.forEach((observer) => observer?.disconnect());
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+    };
+  }, [observerRefs, onChange]);
 
   const Separator = () => (
     <div className="mx-1 h-[24px] w-[1.2px] bg-border" aria-hidden="true" />
@@ -78,7 +128,6 @@ export function ExpandableTabs({
 
   return (
     <div
-      ref={outsideClickRef}
       className={cn(
         "flex flex-wrap items-center gap-2 rounded-2xl border bg-background p-2 shadow-sm",
         className,
@@ -91,7 +140,7 @@ export function ExpandableTabs({
 
         const Icon = tab.icon;
         return (
-          <motion.button
+          <motion.a
             key={tab.title}
             variants={buttonVariants}
             initial={false}
@@ -99,6 +148,7 @@ export function ExpandableTabs({
             custom={selected === index}
             onClick={() => handleSelect(index)}
             transition={transition}
+            href={tab.href}
             className={cn(
               "relative flex items-center rounded-xl px-4 py-2 text-base font-medium cursor-pointer transition-colors duration-300",
               selected === index
@@ -121,7 +171,7 @@ export function ExpandableTabs({
                 </motion.span>
               )}
             </AnimatePresence>
-          </motion.button>
+          </motion.a>
         );
       })}
     </div>
