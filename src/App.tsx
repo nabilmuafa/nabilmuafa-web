@@ -1,7 +1,7 @@
 import UnderDevelopment from "@/pages/under-development";
 
 function App() {
-  return <UnderDevelopment />
+  return <UnderDevelopment />;
 }
 
-export default App
+export default App;
