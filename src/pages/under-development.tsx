@@ -21,15 +21,15 @@ const UnderDevelopment = (): React.JSX.Element => {
         mouseTargetRef={mainContentRef}
       />
       <div className="flex items-center flex-1">
-        <div className="flex flex-col gap-4 font-bold text-6xl text-center">
+        <div className="flex flex-col gap-4 font-bold text-4xl md:text-6xl text-center">
           <p>🏗️ UNDER</p>
           <p>DEVELOPMENT!</p>
           <div className="font-normal">
-            <div className="flex flex-col gap-2 text-lg">
+            <div className="flex flex-col gap-2 text-sm md:text-lg">
               <p>let me cook vro... 🥀</p>
-              <p className="pt-16">...check these in the meantime!</p>
+              <p className="pt-8 md:pt-16">...check these in the meantime!</p>
             </div>
-            <div className="flex justify-center text-base gap-8 mt-2">
+            <div className="flex flex-col md:flex-row justify-center items-center text-sm md:text-base gap-2 md:gap-8 mt-2">
               <SocialLink
                 href="https://linkedin.com/in/nabilmuafa"
                 Icon={FaLinkedin}
@@ -53,7 +53,7 @@ const UnderDevelopment = (): React.JSX.Element => {
         </div>
       </div>
       <div>
-        <div className="flex items-center gap-2 text-sm mb-4">
+        <div className="flex items-center gap-2 text-xs md:text-sm mb-4">
           <span>nabilmuafa.com | </span>
           <a
             className="flex items-center gap-2 hover:underline"
