@@ -27,16 +27,16 @@ export const HeroSection = (): React.JSX.Element => {
         ease: [0.23, 0.86, 0.39, 0.96],
         opacity: { duration: 1.2 },
       }}
-      className="flex justify-center pt-24 mb-12"
+      className="flex justify-center pt-24 px-8 mb-4 md:mb-12"
     >
       <div className="text-center font-medium max-w-3xl">
-        <div className="text-6xl">
+        <div className="text-3xl md:text-6xl">
           <p>Hello there, I'm Nabil!</p>
           <div className="font-bold">
             <ColorWordRotate words={rotatingWords} colors={rotatingColors} />
           </div>
         </div>
-        <div className="font-normal text-xl mt-8 text-stone-700">
+        <div className="font-normal text-sm md:text-xl mt-4 md:mt-8 text-stone-700">
           Upcoming final year computer science student with a strong passion for
           building robust and scalable systems. A meticulous, detailed-to-pixels
           problem solver, with skills sharpened through countless Capture The

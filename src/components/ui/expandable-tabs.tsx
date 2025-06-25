@@ -165,7 +165,7 @@ export function ExpandableTabs({
                   animate="animate"
                   exit="exit"
                   transition={transition}
-                  className="overflow-hidden"
+                  className="overflow-hidden hidden md:block"
                 >
                   {tab.title}
                 </motion.span>
