@@ -3,6 +3,8 @@ import { ExpandableTabs } from "@/components/ui/expandable-tabs";
 import { HeroSection } from "@/components/sections/hero-section";
 import { TechSection } from "@/components/sections/tech-section";
 import { useRef } from "react";
+import { motion } from "framer-motion";
+import { ExperiencesSection } from "@/components/sections/experiences";
 
 const PortfolioPage = (): React.JSX.Element => {
   const observerRefs = useRef<Array<HTMLElement | null>>([]);
@@ -15,8 +17,8 @@ const PortfolioPage = (): React.JSX.Element => {
 
   return (
     <main className="flex justify-center font-instrument">
-      <div className="max-w-7xl w-full">
-        <div className="fixed top-4 z-10 inset-x-0 flex justify-center mx-auto">
+      <div className="max-w-7xl w-full overflow-hidden">
+        <div className="fixed top-4 z-100 inset-x-0 flex justify-center mx-auto">
           <ExpandableTabs observerRefs={observerRefs} tabs={tabs} />
         </div>
         <section
@@ -24,20 +26,43 @@ const PortfolioPage = (): React.JSX.Element => {
             observerRefs.current[0] = el;
           }}
           id="home"
+          className="pt-24"
         >
-          <HeroSection />
-          <TechSection />
+          <motion.div
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 2.4,
+              ease: [0.23, 0.86, 0.39, 0.96],
+              opacity: { duration: 1.2 },
+            }}
+          >
+            <HeroSection />
+            <TechSection />
+          </motion.div>
         </section>
-        <div
+        <section
           ref={(el) => {
             observerRefs.current[1] = el;
           }}
           id="experiences"
-          className="h-screen bg-red-100"
+          className="min-h-screen w-full pt-24"
         >
-          anggap saja ini experiences
-        </div>
-        <div
+          <motion.div
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 2.4,
+              ease: [0.23, 0.86, 0.39, 0.96],
+              opacity: { duration: 1.2 },
+            }}
+          >
+            <ExperiencesSection />
+          </motion.div>
+        </section>
+        <section
           ref={(el) => {
             observerRefs.current[2] = el;
           }}
@@ -45,8 +70,8 @@ const PortfolioPage = (): React.JSX.Element => {
           className="h-screen bg-green-100"
         >
           anggap saja ini projects
-        </div>
-        <div
+        </section>
+        <section
           ref={(el) => {
             observerRefs.current[3] = el;
           }}
@@ -54,7 +79,7 @@ const PortfolioPage = (): React.JSX.Element => {
           className="h-screen bg-blue-100"
         >
           anggap saja ini contact
-        </div>
+        </section>
       </div>
     </main>
   );
