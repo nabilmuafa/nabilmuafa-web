@@ -129,7 +129,7 @@ export function ExpandableTabs({
   return (
     <div
       className={cn(
-        "flex flex-wrap items-center gap-2 rounded-2xl border bg-background p-2 shadow-sm",
+        "flex flex-wrap items-center gap-2 rounded-2xl border bg-white/30 backdrop-blur-xs p-2 shadow-sm",
         className,
       )}
     >
@@ -152,8 +152,8 @@ export function ExpandableTabs({
             className={cn(
               "relative flex items-center rounded-xl px-4 py-2 text-base font-medium cursor-pointer transition-colors duration-300",
               selected === index
-                ? cn("bg-muted", activeColor)
-                : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                ? cn("bg-muted/70", activeColor)
+                : "text-muted-foreground hover:bg-muted/70 hover:text-foreground",
             )}
           >
             <Icon size={24} />

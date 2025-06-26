@@ -1,7 +1,6 @@
 "use client";
 import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import quorumLogo from "@/assets/purple-quorum.png";
 
 interface TimelineEntry {
   title: string;
@@ -33,15 +32,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
-      className="w-full bg-white dark:bg-neutral-950 pl-2 pr-8 md:px-8"
+      className="w-full dark:bg-neutral-950 pl-2 pr-8 md:px-8"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto text-center px-4 md:px-8 mb-8 lg:px-10">
-        <h2 className="text-2xl md:text-4xl font-medium text-black dark:text-white">
-          My Experiences
-        </h2>
-      </div>
-
       <div
         ref={ref}
         className="relative flex flex-col gap-12 md:gap-28 max-w-7xl mx-auto py-8 md:py-20"
@@ -52,7 +45,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             className="flex flex-col md:flex-row md:justify-between gap-4 md:gap-10"
           >
             <div className="sticky flex z-40 items-center top-40 self-start max-w-2xl w-full">
-              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
+              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full dark:bg-black flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
               <img

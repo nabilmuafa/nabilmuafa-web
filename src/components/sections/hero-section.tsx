@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ColorWordRotate } from "../magicui/color-word-rotate";
 
 export const HeroSection = (): React.JSX.Element => {

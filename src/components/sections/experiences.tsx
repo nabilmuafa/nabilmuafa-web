@@ -62,7 +62,12 @@ export const ExperiencesSection = (): React.JSX.Element => {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full pt-12 bg-white/40 rounded-4xl">
+      <div className="max-w-7xl mx-auto text-center px-4 md:px-8 mb-8 lg:px-10">
+        <h2 className="text-2xl md:text-4xl font-medium text-black dark:text-white">
+          My Experiences
+        </h2>
+      </div>
       <Timeline data={data} />
     </div>
   );
