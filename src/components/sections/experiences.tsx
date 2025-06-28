@@ -65,7 +65,7 @@ export const ExperiencesSection = (): React.JSX.Element => {
   const colors = ["#00BFFF", "#1E90FF", "#0000CD", "#000080"];
 
   return (
-    <div className="w-full pt-12 bg-white/40 rounded-4xl">
+    <div className="w-full pt-12 border bg-white/40 shadow-sm rounded-4xl">
       <div className="max-w-7xl mx-auto text-center px-4 md:px-8 mb-4 lg:px-10">
         <h2 className="text-2xl md:text-4xl font-bold">
           <span>My </span>

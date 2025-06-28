@@ -7,6 +7,7 @@ import { motion } from "motion/react";
 import { ExperiencesSection } from "@/components/sections/experiences";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import { ContactSection } from "@/components/sections/contact";
+import { FooterSection } from "@/components/sections/footer";
 
 const PortfolioPage = (): React.JSX.Element => {
   const observerRefs = useRef<Array<HTMLElement | null>>([]);
@@ -97,6 +98,7 @@ const PortfolioPage = (): React.JSX.Element => {
           </section>
         </div>
       </main>
+      <FooterSection />
     </>
   );
 };
