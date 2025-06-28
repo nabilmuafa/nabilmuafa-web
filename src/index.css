@@ -7,6 +7,7 @@
 @theme {
   --font-roboto-mono: "Roboto Mono", monospace;
   --font-instrument: "Instrument Sans", sans-serif;
+  --color-graphite: #232323;
 }
 
 @theme inline {

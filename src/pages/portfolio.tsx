@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { motion } from "motion/react";
 import { ExperiencesSection } from "@/components/sections/experiences";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
+import { ContactSection } from "@/components/sections/contact";
 
 const PortfolioPage = (): React.JSX.Element => {
   const observerRefs = useRef<Array<HTMLElement | null>>([]);
@@ -40,7 +41,7 @@ const PortfolioPage = (): React.JSX.Element => {
         interactive
       />
 
-      <main className="relative z-10 flex justify-center font-instrument">
+      <main className="text-graphite relative z-10 flex justify-center font-instrument">
         <div className="max-w-7xl w-full">
           <div className="fixed top-4 z-100 inset-x-0 flex justify-center mx-auto">
             <ExpandableTabs observerRefs={observerRefs} tabs={tabs} />
@@ -81,18 +82,18 @@ const PortfolioPage = (): React.JSX.Element => {
               observerRefs.current[2] = el;
             }}
             id="projects"
-            className="h-screen bg-green-100"
+            className="h-screen pt-24 px-8"
           >
-            anggap saja ini projects
+            ini projects
           </section>
           <section
             ref={(el) => {
               observerRefs.current[3] = el;
             }}
             id="contact"
-            className="h-screen bg-blue-100"
+            className="py-24 px-8"
           >
-            anggap saja ini contact
+            <ContactSection />
           </section>
         </div>
       </main>
