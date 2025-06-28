@@ -41,7 +41,7 @@ const PortfolioPage = (): React.JSX.Element => {
       />
 
       <main className="relative z-10 flex justify-center font-instrument">
-        <div className="max-w-7xl w-full overflow-hidden">
+        <div className="max-w-7xl w-full">
           <div className="fixed top-4 z-100 inset-x-0 flex justify-center mx-auto">
             <ExpandableTabs observerRefs={observerRefs} tabs={tabs} />
           </div>
@@ -50,7 +50,7 @@ const PortfolioPage = (): React.JSX.Element => {
               observerRefs.current[0] = el;
             }}
             id="home"
-            className="pt-24"
+            className="overflow-hidden pt-24"
           >
             <motion.div
               initial={{ opacity: 0, y: 150 }}
@@ -71,7 +71,7 @@ const PortfolioPage = (): React.JSX.Element => {
               observerRefs.current[1] = el;
             }}
             id="experiences"
-            className="min-h-screen w-full rounded-md pt-12"
+            className="overflow-hidden min-h-screen w-full rounded-md pt-12 px-8"
           >
             <motion.div
               initial={{ opacity: 0, y: 150 }}

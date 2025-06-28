@@ -1,11 +1,19 @@
+import { useEffect, useState } from "react";
 import { OrbitingCircles } from "../magicui/orbiting-circles";
 import { SVGIcons } from "@/assets/svg-icons";
 
 export const TechSection = (): React.JSX.Element => {
-  const isMobile = window.screen.width < 768;
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize, false);
+    return () => window.removeEventListener("resize", handleResize);
+  });
   const sizes = {
-    icon: window.screen.width < 768 ? [20, 25, 30] : [25, 30, 40],
-    radius: window.screen.width < 768 ? [35, 75, 125] : [50, 100, 160],
+    icon: windowWidth < 768 ? [20, 25, 30] : [25, 30, 40],
+    radius: windowWidth < 768 ? [35, 75, 125] : [50, 100, 160],
   };
   const technologies = [
     ["nginx", "dart", "java", "flutter", "amazonaws", "bun", "mysql"],
@@ -36,12 +44,9 @@ export const TechSection = (): React.JSX.Element => {
     ],
   ];
   return (
-    <div className="flex flex-col md:flex-row items-center gap-4 px-8">
-      <div className="relative flex h-[300px] md:h-[400px] w-full flex-col items-center justify-center overflow-hidden">
-        <OrbitingCircles
-          iconSize={isMobile ? sizes.icon[2] : sizes.icon[2]}
-          radius={isMobile ? sizes.radius[2] : sizes.radius[2]}
-        >
+    <div className="flex flex-col lg:flex-row items-center gap-4 px-8">
+      <div className="relative flex h-[350px] lg:h-[400px] w-full flex-col items-center justify-center overflow-hidden">
+        <OrbitingCircles iconSize={sizes.icon[2]} radius={sizes.radius[2]}>
           {technologies[2].map((item) => {
             const IconComponent = SVGIcons[item as keyof typeof SVGIcons];
             if (IconComponent) {
@@ -50,8 +55,8 @@ export const TechSection = (): React.JSX.Element => {
           })}
         </OrbitingCircles>
         <OrbitingCircles
-          iconSize={isMobile ? sizes.icon[1] : sizes.icon[1]}
-          radius={isMobile ? sizes.radius[1] : sizes.radius[1]}
+          iconSize={sizes.icon[1]}
+          radius={sizes.radius[1]}
           reverse
         >
           {technologies[1].map((item) => {
@@ -61,10 +66,7 @@ export const TechSection = (): React.JSX.Element => {
             }
           })}
         </OrbitingCircles>
-        <OrbitingCircles
-          iconSize={isMobile ? sizes.icon[0] : sizes.icon[0]}
-          radius={isMobile ? sizes.radius[0] : sizes.radius[0]}
-        >
+        <OrbitingCircles iconSize={sizes.icon[0]} radius={sizes.radius[0]}>
           {technologies[0].map((item) => {
             const IconComponent = SVGIcons[item as keyof typeof SVGIcons];
             if (IconComponent) {
