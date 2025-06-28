@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { AnimatePresence, motion, type Transition } from "framer-motion";
+import { AnimatePresence, motion, type Transition } from "motion/react";
 import { cn } from "@/lib/utils";
 import { type LucideIcon } from "lucide-react";
 

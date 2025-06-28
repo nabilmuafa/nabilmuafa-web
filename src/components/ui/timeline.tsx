@@ -1,5 +1,5 @@
 "use client";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
@@ -35,12 +35,20 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full dark:bg-neutral-950 pl-2 pr-8 md:px-8"
       ref={containerRef}
     >
+      <div className="mx-auto border-1 border-neutral-300 w-72"></div>
       <div
         ref={ref}
         className="relative flex flex-col gap-12 md:gap-28 max-w-7xl mx-auto py-8 md:py-20"
       >
         {data.map((item, index) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{
+              duration: 1.0,
+              ease: [0.23, 0.86, 0.39, 0.96],
+            }}
             key={index}
             className="flex flex-col md:flex-row md:justify-between gap-4 md:gap-10"
           >
@@ -68,7 +76,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             <div className="relative pl-16 text-sm md:text-base text-stone-700 md:pl-4 max-w-2xl md:max-w-xl w-full">
               {item.content}{" "}
             </div>
-          </div>
+          </motion.div>
         ))}
         <div
           style={{

@@ -3,7 +3,7 @@ import { ExpandableTabs } from "@/components/ui/expandable-tabs";
 import { HeroSection } from "@/components/sections/hero-section";
 import { TechSection } from "@/components/sections/tech-section";
 import { useRef } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ExperiencesSection } from "@/components/sections/experiences";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 
@@ -52,19 +52,10 @@ const PortfolioPage = (): React.JSX.Element => {
             id="home"
             className="overflow-hidden pt-24"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 150 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 2.4,
-                ease: [0.23, 0.86, 0.39, 0.96],
-                opacity: { duration: 1.2 },
-              }}
-            >
+            <div>
               <HeroSection />
               <TechSection />
-            </motion.div>
+            </div>
           </section>
           <section
             ref={(el) => {
@@ -74,13 +65,12 @@ const PortfolioPage = (): React.JSX.Element => {
             className="overflow-hidden min-h-screen w-full rounded-md pt-12 px-8"
           >
             <motion.div
-              initial={{ opacity: 0, y: 150 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, filter: "blur(0px)" }}
               viewport={{ once: true }}
               transition={{
-                duration: 2.4,
+                duration: 1.0,
                 ease: [0.23, 0.86, 0.39, 0.96],
-                opacity: { duration: 1.2 },
               }}
             >
               <ExperiencesSection />

@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { OrbitingCircles } from "../magicui/orbiting-circles";
 import { SVGIcons } from "@/assets/svg-icons";
@@ -44,7 +45,17 @@ export const TechSection = (): React.JSX.Element => {
     ],
   ];
   return (
-    <div className="flex flex-col lg:flex-row items-center gap-4 px-8">
+    <motion.div
+      initial={{ opacity: 0, filter: "blur(8px)" }}
+      whileInView={{ opacity: 1, filter: "blur(0px)" }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 1.0,
+        delay: 0.2,
+        ease: [0.23, 0.86, 0.39, 0.96],
+      }}
+      className="flex flex-col lg:flex-row items-center gap-4 px-8"
+    >
       <div className="relative flex h-[350px] lg:h-[400px] w-full flex-col items-center justify-center overflow-hidden">
         <OrbitingCircles iconSize={sizes.icon[2]} radius={sizes.radius[2]}>
           {technologies[2].map((item) => {
@@ -84,6 +95,6 @@ export const TechSection = (): React.JSX.Element => {
           demonstrating high adaptability and flexibility.
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };

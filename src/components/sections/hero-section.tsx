@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { ColorWordRotate } from "../magicui/color-word-rotate";
 import selfPic from "@/assets/selfpic.jpeg";
 
@@ -19,7 +20,16 @@ export const HeroSection = (): React.JSX.Element => {
   ];
 
   return (
-    <div className="flex justify-center px-8 mb-4 md:mb-12">
+    <motion.div
+      initial={{ opacity: 0, filter: "blur(8px)" }}
+      whileInView={{ opacity: 1, filter: "blur(0px)" }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 1.0,
+        ease: [0.23, 0.86, 0.39, 0.96],
+      }}
+      className="flex justify-center px-8 mb-4 md:mb-12"
+    >
       <div className="flex flex-col justify-center items-center text-center font-medium max-w-3xl">
         <img src={selfPic} className="w-48 h-48 rounded-full my-8" />
         <div className="text-3xl md:text-6xl">
@@ -35,6 +45,6 @@ export const HeroSection = (): React.JSX.Element => {
           Flag competitions.
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
