@@ -31,7 +31,10 @@ export const HeroSection = (): React.JSX.Element => {
       className="flex justify-center px-8 mb-4 md:mb-12"
     >
       <div className="flex flex-col justify-center items-center text-center font-medium max-w-3xl">
-        <img src={selfPic} className="w-48 h-48 rounded-full my-8" />
+        <img
+          src={selfPic}
+          className="w-48 h-48 rounded-full mt-4 mb-8 md:my-8"
+        />
         <div className="text-3xl md:text-6xl">
           <p>Hello there, I'm Nabil!</p>
           <div className="font-bold">

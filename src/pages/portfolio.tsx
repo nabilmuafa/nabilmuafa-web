@@ -43,7 +43,7 @@ const PortfolioPage = (): React.JSX.Element => {
       />
 
       <main className="text-graphite relative z-10 flex justify-center font-instrument">
-        <div className="max-w-7xl w-full">
+        <div className="max-w-7xl w-full overflow-hidden">
           <div className="fixed top-4 z-100 inset-x-0 flex justify-center mx-auto">
             <ExpandableTabs observerRefs={observerRefs} tabs={tabs} />
           </div>
@@ -92,7 +92,7 @@ const PortfolioPage = (): React.JSX.Element => {
               observerRefs.current[3] = el;
             }}
             id="contact"
-            className="py-24 px-8"
+            className="py-8 md:py-16 px-8"
           >
             <ContactSection />
           </section>

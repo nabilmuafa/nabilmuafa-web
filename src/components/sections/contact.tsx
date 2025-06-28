@@ -27,21 +27,24 @@ export const ContactSection = (): React.JSX.Element => {
 
   return (
     <div className="">
-      <div className="text-5xl font-bold">
+      <div className="text-2xl md:text-5xl font-bold">
         <span>Let's </span>
         <AuroraText colors={colors}>Connect!</AuroraText>
       </div>
       <div className="flex items-start gap-4 mt-4">
         <div className="border-1 w-36 border-gray-700 mt-3"></div>
-        <p className="text-xl">
+        <p className="text-sm text-justify md:text-xl">
           If you're looking for project teammates, PWN/OSINT player for CTFs,
           Godot programmer for Game Jams, or probably just hitting me up, feel
           free to contact me through email:
         </p>
       </div>
-      <div className="flex items-center gap-4 font-bold text-4xl mt-4">
+      <div className="flex items-center gap-4 font-bold text-xl md:text-4xl mt-4">
         <SmallSquareButton href="mailto:contact@nabilmuafa.com" Icon={Mail} />
-        <AnimatedSubscribeButton onClick={handleCopy("contact@nabilmuafa.com")}>
+        <AnimatedSubscribeButton
+          onClick={handleCopy("contact@nabilmuafa.com")}
+          className="hidden md:block"
+        >
           <span>
             <Copy />
           </span>
@@ -52,7 +55,7 @@ export const ContactSection = (): React.JSX.Element => {
         <p>contact@nabilmuafa.com</p>
       </div>
       <div>
-        <p className="text-xl mt-8">Or through my other socials!</p>
+        <p className="text-sm md:text-xl mt-8">Or through my other socials!</p>
         <div className="flex gap-4 mt-4">
           <SmallSquareButton
             href="https://instagram.com/nabilmuafa"
