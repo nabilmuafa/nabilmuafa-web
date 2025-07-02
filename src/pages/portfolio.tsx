@@ -8,6 +8,7 @@ import { ExperiencesSection } from "@/components/sections/experiences";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import { ContactSection } from "@/components/sections/contact";
 import { FooterSection } from "@/components/sections/footer";
+import { ProjectsSection } from "@/components/sections/projects";
 
 const PortfolioPage = (): React.JSX.Element => {
   const observerRefs = useRef<Array<HTMLElement | null>>([]);
@@ -83,9 +84,9 @@ const PortfolioPage = (): React.JSX.Element => {
               observerRefs.current[2] = el;
             }}
             id="projects"
-            className="h-screen pt-24 px-8"
+            className="pt-24 px-8"
           >
-            ini projects
+            <ProjectsSection />
           </section>
           <section
             ref={(el) => {
