@@ -1,4 +1,5 @@
 import { type ComponentPropsWithoutRef, type ReactNode } from "react";
+import { SquareArrowOutUpRight } from "lucide-react";
 import { SVGIcons } from "@/assets/svg-icons";
 
 import { Button } from "@/components/ui/button";
@@ -92,7 +93,7 @@ const BentoCard = ({
         >
           <a href={href}>
             {cta}
-            {/* <ArrowRightIcon className="ms-2 h-4 w-4 rtl:rotate-180" /> */}
+            <SquareArrowOutUpRight className="mt-[1px] h-4 w-4 rtl:rotate-180" />
           </a>
         </Button>
       </div>
@@ -112,7 +113,7 @@ const BentoCard = ({
       >
         <a href={href}>
           {cta}
-          {/* <ArrowRightIcon className="ms-2 h-4 w-4 rtl:rotate-180" /> */}
+          <SquareArrowOutUpRight className="mt-[1px] h-4 w-4 rtl:rotate-180" />
         </a>
       </Button>
     </div>
