@@ -1,11 +1,13 @@
 import { type ComponentPropsWithoutRef, type ReactNode } from "react";
 import { SquareArrowOutUpRight } from "lucide-react";
+import { motion } from "motion/react";
 import { SVGIcons } from "@/assets/svg-icons";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 import notFound from "@/assets/Image-not-found.png";
+import type { MotionProps } from "motion/react";
 
 interface BentoGridProps extends ComponentPropsWithoutRef<"div"> {
   children: ReactNode;
@@ -14,12 +16,13 @@ interface BentoGridProps extends ComponentPropsWithoutRef<"div"> {
 
 interface BentoCardProps extends ComponentPropsWithoutRef<"div"> {
   name: string;
-  className: string;
+  className?: string;
   imgSrc?: string;
   description: string;
   href: string;
   cta: string;
   techStack?: ReactNode[];
+  motionProps?: MotionProps;
 }
 
 const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
@@ -44,9 +47,9 @@ const BentoCard = ({
   href,
   cta,
   techStack,
-  ...props
+  motionProps,
 }: BentoCardProps) => (
-  <div
+  <motion.div
     key={name}
     className={cn(
       "group relative flex flex-col col-span-3 sm:col-span-1 justify-between overflow-hidden rounded-xl h-full",
@@ -54,7 +57,7 @@ const BentoCard = ({
       "border bg-white/40 shadow-sm",
       className,
     )}
-    {...props}
+    {...motionProps}
   >
     <div className="absolute w-full [mask-image:linear-gradient(to_bottom,black_40%,transparent_100%)]">
       <img
@@ -119,7 +122,7 @@ const BentoCard = ({
     </div>
 
     <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03]" />
-  </div>
+  </motion.div>
 );
 
 export { BentoCard, BentoGrid };

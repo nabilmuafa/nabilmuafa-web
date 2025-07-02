@@ -1,5 +1,6 @@
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import { AuroraText } from "../magicui/aurora-text";
+import { motion } from "motion/react";
 import escapeFromAShortEscapeThumbnail from "@/assets/efase.png";
 import pacilflix from "@/assets/pacilflix.png";
 import literasea from "@/assets/literasea.jpeg";
@@ -14,7 +15,6 @@ export const ProjectsSection = (): React.JSX.Element => {
       href: "https://github.com/nabilmuafa/individual-game-jam",
       cta: "GitHub Repository",
       imgSrc: escapeFromAShortEscapeThumbnail,
-      className: "",
       techStack: ["godot"],
     },
     {
@@ -23,7 +23,6 @@ export const ProjectsSection = (): React.JSX.Element => {
       href: "https://github.com/nabilmuafa/nabilmuafa-web",
       cta: "GitHub Repository",
       imgSrc: personalWeb,
-      className: "",
       techStack: [
         "react",
         "typescript",
@@ -41,7 +40,6 @@ export const ProjectsSection = (): React.JSX.Element => {
       href: "https://github.com/e4-basdat/e4-pacilflix",
       cta: "GitHub Repository",
       imgSrc: pacilflix,
-      className: "",
       techStack: [
         "django",
         "python",
@@ -60,7 +58,6 @@ export const ProjectsSection = (): React.JSX.Element => {
       cta: "GitHub Repository",
       imgSrc: literasea,
       techStack: ["django", "python", "tailwindcss", "html"],
-      className: "",
     },
     {
       name: "Literasea Mobile",
@@ -69,7 +66,6 @@ export const ProjectsSection = (): React.JSX.Element => {
       href: "https://github.com/C05-PBP-2023/literasea",
       cta: "GitHub Repository",
       techStack: ["flutter", "dart"],
-      className: "",
     },
   ];
 
@@ -77,15 +73,37 @@ export const ProjectsSection = (): React.JSX.Element => {
 
   return (
     <div>
-      <div className="max-w-7xl mx-auto text-center px-4 md:px-8 mb-8 lg:mb-12 lg:px-10">
+      <motion.div
+        initial={{ opacity: 0, y: 32, filter: "blur(8px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 1.0,
+          ease: [0.23, 0.86, 0.39, 0.96],
+        }}
+        className="max-w-7xl mx-auto text-center px-4 md:px-8 mb-8 lg:mb-12 lg:px-10"
+      >
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
           <span>My </span>
           <AuroraText colors={colors}>Projects</AuroraText>
         </h2>
-      </div>
+      </motion.div>
       <BentoGrid>
-        {features.map((feature) => (
-          <BentoCard key={feature.name} {...feature} />
+        {features.map((feature, i) => (
+          <BentoCard
+            key={feature.name}
+            motionProps={{
+              initial: { opacity: 0, scale: 0.9, filter: "blur(8px)" },
+              whileInView: { opacity: 1, scale: 1.0, filter: "blur(0px)" },
+              viewport: { once: true },
+              transition: {
+                duration: 1.0,
+                ease: [0.23, 0.86, 0.39, 0.96],
+                delay: 0.15 * i,
+              },
+            }}
+            {...feature}
+          />
         ))}
       </BentoGrid>
     </div>
