@@ -27,8 +27,9 @@ export const ExperiencesSection = (): React.JSX.Element => {
       image: ristekLogo,
       content: (
         <p>
-          Led a team of 9 leads and 8 members blablablabla. Lorem ipsum dolor
-          sit amet. Skibidi sigma pomni ts pmo sybau.
+          Led a team of 9 leads and 8 members in the SIG, providing all with
+          internal workshops, mentorships, biweekly CTFs, (upcoming) projects,
+          and other experiences within the cyber security scope.
         </p>
       ),
     },
@@ -39,8 +40,10 @@ export const ExperiencesSection = (): React.JSX.Element => {
       image: fasilkomLogo,
       content: (
         <p>
-          Led a team of 9 leads and 8 members blablablabla. Lorem ipsum dolor
-          sit amet. Skibidi sigma pomni ts pmo sybau.
+          Assisted the lecturers in leading and coordinating a team of 25+
+          teaching assistants responsible for developing weekly tutorials &
+          assignments. Also outlined and developed an additional material for
+          the course regarding web security issues.
         </p>
       ),
     },
