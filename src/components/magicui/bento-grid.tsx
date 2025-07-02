@@ -25,7 +25,7 @@ const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
   return (
     <div
       className={cn(
-        "grid w-full auto-rows-[22rem] grid-cols-3 gap-4",
+        "grid w-full auto-rows-[22rem] sm:grid-cols-2 lg:grid-cols-3 gap-4",
         className,
       )}
       {...props}
@@ -48,7 +48,7 @@ const BentoCard = ({
   <div
     key={name}
     className={cn(
-      "group relative flex flex-col col-span-3 lg:col-span-1 justify-between overflow-hidden rounded-xl h-full",
+      "group relative flex flex-col col-span-3 sm:col-span-1 justify-between overflow-hidden rounded-xl h-full",
       // light styles
       "border bg-white/40 shadow-sm",
       className,
@@ -61,19 +61,24 @@ const BentoCard = ({
         className="aspect-2/1 h-full object-cover transition-all ease-in-out duration-500 group-hover:scale-110"
       />
     </div>
-    <div className="flex flex-col p-4">
-      <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 transition-all duration-300 lg:group-hover:-translate-y-10 pt-38">
+    <div className="flex flex-col grow lg:grow-0 p-4">
+      <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 transition-all duration-300 lg:group-hover:-translate-y-10 pt-32 lg:pt-38">
         <h3 className="text-xl font-semibold">{name}</h3>
         <div className="flex items-center gap-2">
           {techStack?.map((item) => {
             const IconComponent = SVGIcons[item as keyof typeof SVGIcons];
             if (IconComponent) {
-              return <IconComponent className="w-[20px] h-[20px]" />;
+              return (
+                <IconComponent className="w-[16px] h-[16px] md:w-[20px] md:h-[20px]" />
+              );
             }
           })}
         </div>
-        <p className="max-w-lg mt-4 text-justify">{description}</p>
+        <p className="max-w-lg mt-2 md:mt-4 text-justify text-sm lg:text-base">
+          {description}
+        </p>
       </div>
+      <div className="lg:hidden flex grow" />
       <div
         className={cn(
           "lg:hidden pointer-events-none flex w-full translate-y-0 transform-gpu flex-row items-center transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
@@ -93,7 +98,7 @@ const BentoCard = ({
       </div>
     </div>
 
-    <div className="flex flex-grow" />
+    <div className="hidden lg:flex grow" />
     <div
       className={cn(
         "hidden lg:flex pointer-events-none absolute bottom-0 w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
