@@ -28,20 +28,20 @@ export const HeroSection = (): React.JSX.Element => {
         duration: 1.0,
         ease: [0.23, 0.86, 0.39, 0.96],
       }}
-      className="flex justify-center px-8 mb-4 md:mb-12"
+      className="flex justify-center px-8 mb-4 lg:mb-12"
     >
       <div className="flex flex-col justify-center items-center text-center font-medium max-w-3xl">
         <img
           src={selfPic}
-          className="w-48 h-48 rounded-full mt-4 mb-8 md:my-8"
+          className="w-48 h-48 rounded-full mt-4 mb-8 lg:my-8"
         />
-        <div className="text-3xl md:text-6xl">
+        <div className="text-3xl md:text-5xl lg:text-6xl">
           <p>Hello there, I'm Nabil!</p>
           <div className="font-bold">
             <ColorWordRotate words={rotatingWords} colors={rotatingColors} />
           </div>
         </div>
-        <div className="font-normal text-sm md:text-xl mt-4 md:mt-8 text-stone-700">
+        <div className="font-normal text-sm md:text-lg lg:text-xl mt-4 lg:mt-8 text-stone-700">
           Upcoming final year computer science student with a strong passion for
           building robust and scalable systems. A meticulous, detailed-to-pixels
           problem solver, with skills sharpened through countless Capture The

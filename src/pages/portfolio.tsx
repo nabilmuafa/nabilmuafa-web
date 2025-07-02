@@ -65,7 +65,7 @@ const PortfolioPage = (): React.JSX.Element => {
               observerRefs.current[1] = el;
             }}
             id="experiences"
-            className="overflow-hidden min-h-screen w-full rounded-md pt-12 px-8"
+            className="overflow-hidden min-h-screen w-full rounded-md -mt-8 pt-12 px-8"
           >
             <motion.div
               initial={{ opacity: 0, filter: "blur(8px)" }}
@@ -84,7 +84,7 @@ const PortfolioPage = (): React.JSX.Element => {
               observerRefs.current[2] = el;
             }}
             id="projects"
-            className="pt-24 px-8"
+            className="-mt-8 pt-24 px-8"
           >
             <ProjectsSection />
           </section>

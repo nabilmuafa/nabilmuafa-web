@@ -21,7 +21,7 @@ export const ExperiencesSection = (): React.JSX.Element => {
       ),
     },
     {
-      title: "Director @ Network, Security, and Operating System SIG",
+      title: "Director of Network, Security, and Operating System SIG",
       company: "RISTEK Fakultas Ilmu Komputer Universitas Indonesia",
       period: "Mar 2025 - Present",
       image: ristekLogo,
@@ -65,12 +65,13 @@ export const ExperiencesSection = (): React.JSX.Element => {
   const colors = ["#00BFFF", "#1E90FF", "#0000CD", "#000080"];
 
   return (
-    <div className="w-full py-12 border bg-white/40 shadow-sm rounded-4xl">
-      <div className="max-w-7xl mx-auto text-center px-4 md:px-8 mb-4 lg:px-10">
-        <h2 className="text-2xl md:text-4xl font-bold">
+    <div className="w-full py-8 lg:py-12 border bg-white/40 shadow-sm rounded-4xl">
+      <div className="max-w-7xl mx-auto text-center px-4 md:px-8 lg:px-10">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
           <span>My </span>
           <AuroraText colors={colors}>Experiences</AuroraText>
         </h2>
+        <div className="mx-auto border-1 border-neutral-300 w-48 md:w-64 lg:w-72 mt-4"></div>
       </div>
       <Timeline data={data} />
     </div>

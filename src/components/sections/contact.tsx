@@ -59,7 +59,7 @@ export const ContactSection = (): React.JSX.Element => {
           duration: 1.0,
           ease: [0.23, 0.86, 0.39, 0.96],
         }}
-        className="text-2xl md:text-5xl font-bold"
+        className="text-2xl md:text-3xl lg:text-4xl font-bold"
       >
         <span>Let's </span>
         <AuroraText colors={colors}>Connect!</AuroraText>
@@ -75,14 +75,14 @@ export const ContactSection = (): React.JSX.Element => {
         className="flex items-start gap-4 mt-4"
       >
         <div className="border-1 w-36 border-gray-700 mt-3"></div>
-        <p className="text-sm text-justify md:text-xl">
+        <p className="text-sm md:text-base lg:text-lg text-justify">
           If you're looking for project teammates, PWN/OSINT player for CTFs,
           Godot programmer for Game Jams, or probably just hitting me up, feel
           free to contact me through email:
         </p>
       </motion.div>
       <motion.div
-        className="flex items-center gap-4 font-bold text-xl md:text-4xl mt-4"
+        className="flex items-center gap-4 font-bold text-xl md:text-3xl lg:text-4xl mt-4"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
@@ -114,7 +114,7 @@ export const ContactSection = (): React.JSX.Element => {
             duration: 1.0,
             ease: [0.23, 0.86, 0.39, 0.96],
           }}
-          className="text-sm md:text-xl mt-8"
+          className="text-sm md:text-base lg:text-xl mt-8"
         >
           Or through my other socials!
         </motion.p>

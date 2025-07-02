@@ -56,7 +56,7 @@ export const TechSection = (): React.JSX.Element => {
       }}
       className="flex flex-col lg:flex-row items-center gap-4 px-8"
     >
-      <div className="relative flex h-[350px] lg:h-[400px] w-full flex-col items-center justify-center overflow-hidden">
+      <div className="relative flex h-[350px] md:h-[375px] lg:h-[400px] w-full flex-col items-center justify-center overflow-hidden">
         <OrbitingCircles iconSize={sizes.icon[2]} radius={sizes.radius[2]}>
           {technologies[2].map((item) => {
             const IconComponent = SVGIcons[item as keyof typeof SVGIcons];
@@ -86,11 +86,11 @@ export const TechSection = (): React.JSX.Element => {
           })}
         </OrbitingCircles>
       </div>
-      <div className="mb-8">
-        <p className="font-medium text-2xl md:text-3xl">
+      <div className="mb-8 max-w-3xl">
+        <p className="font-medium text-2xl lg:text-3xl">
           My Tech Stack and Tools
         </p>
-        <p className="text-sm md:text-xl pt-4 text-stone-700">
+        <p className="text-sm md:text-lg lg:text-xl pt-4 text-stone-700">
           Proficient in a wide range of programming languages and frameworks,
           demonstrating high adaptability and flexibility.
         </p>
