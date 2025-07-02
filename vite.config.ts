@@ -11,4 +11,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    allowedHosts: ["4c8f-2a09-bac1-34c0-18-00-19b-1f.ngrok-free.app"],
+  },
 });
