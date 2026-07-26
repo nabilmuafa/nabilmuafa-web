@@ -2,15 +2,53 @@ import { Timeline } from "@/components/ui/timeline";
 import quorumLogo from "@/assets/purple-quorum-scaled.png";
 import ristekLogo from "@/assets/ristek.jpeg";
 import compfestLogo from "@/assets/compfest-16.png";
+import digiserveLogo from "@/assets/digiserve.png";
 import fasilkomLogo from "@/assets/fasilkom-logo.jpeg";
+import itsecLogo from "@/assets/itsec.jpeg";
+import openwayLogo from "@/assets/openway.jpeg";
 import { AuroraText } from "../magicui/aurora-text";
 
 export const ExperiencesSection = (): React.JSX.Element => {
   const data = [
     {
       title: "Software Engineer Intern",
+      company: "PT OpenWay Teknologi Indonesia",
+      period: "Jun 2026 - Present",
+      image: openwayLogo,
+      content: <p>Internship still ongoing, more to come~</p>,
+    },
+    {
+      title: "Cloud Security Intern",
+      company: "PT ITSEC Asia Tbk",
+      period: "Feb 2026 - April 2026",
+      image: itsecLogo,
+      content: (
+        <p>
+          AWS &amp; GCPmaxxing. Learned cloud security practices through
+          hands-on cloud security labs such as Pwned Labs, flAWS, or Wiz Cloud
+          Security Championship.
+        </p>
+      ),
+    },
+    {
+      title: "IT Developer Intern",
+      company: "Digiserve by Telkom Indonesia",
+      period: "Jul 2025 - Jan 2026",
+      image: digiserveLogo,
+      content: (
+        <p>
+          Pioneered GitLab CI/CD adoption in company development workflow by
+          implementing reusable pipelines with containerization and rollback
+          mechanisms, and developing fullstack internal document management web
+          app integrated with the company's Azure AD ecosystem (OAuth &amp;
+          Graph API for SharePoint).
+        </p>
+      ),
+    },
+    {
+      title: "Software Engineer Intern",
       company: "QuorumAI",
-      period: "Mar 2025 - Present",
+      period: "Mar 2025 - Jul 2025",
       image: quorumLogo,
       content: (
         <p>

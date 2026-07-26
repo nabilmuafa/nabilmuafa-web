@@ -4,10 +4,10 @@ import selfPic from "@/assets/selfpic.jpeg";
 
 export const HeroSection = (): React.JSX.Element => {
   const rotatingWords = [
-    "CS Student @ UI",
+    "Bachelor of CS @ UI",
     "Software Engineer",
-    "Game Developer",
-    "CTF Player",
+    "Coffee Enthusiast",
+    "ex-CTF Player",
     "Cinephile",
   ];
 
@@ -42,8 +42,8 @@ export const HeroSection = (): React.JSX.Element => {
           </div>
         </div>
         <div className="font-normal text-sm md:text-lg lg:text-xl mt-4 lg:mt-8 text-stone-700">
-          Upcoming final year computer science student with a strong passion for
-          building robust and scalable systems. A meticulous, detailed-to-pixels
+          Bachelor of Computer Science with a strong passion for building
+          systems you see behind the scenes. A meticulous, detailed-to-pixels
           problem solver, with skills sharpened through countless Capture The
           Flag competitions.
         </div>

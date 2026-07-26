@@ -76,9 +76,11 @@ export const ContactSection = (): React.JSX.Element => {
       >
         <div className="border-1 w-36 border-gray-700 mt-3"></div>
         <p className="text-sm md:text-base lg:text-lg text-justify">
-          If you're looking for project teammates, PWN/OSINT player for CTFs,
-          Godot programmer for Game Jams, or probably just want to chat, feel
-          free to contact me through email:
+          If you're looking for project teammates,{" "}
+          <span className="line-through">PWN/OSINT player for CTFs</span> (well,
+          I still can do them but maybe a bit washed), Godot programmer for Game
+          Jams (a bit washed as well), or probably just want to chat, feel free
+          to contact me through email:
         </p>
       </motion.div>
       <motion.div
