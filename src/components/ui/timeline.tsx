@@ -20,7 +20,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       const rect = ref.current.getBoundingClientRect();
       setHeight(rect.height);
     }
-  }, [ref]);
+  }, [ref, data.length]);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -34,7 +34,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     <div className="w-full pl-2 pr-8 md:px-8" ref={containerRef}>
       <div
         ref={ref}
-        className="relative flex flex-col gap-12 md:gap-16 lg:gap-28 max-w-7xl mx-auto py-8 md:py-12 lg:py-20"
+        className="relative flex flex-col gap-12 md:gap-16 lg:gap-20 max-w-7xl mx-auto py-8 md:py-12 lg:py-20"
       >
         {data.map((item, index) => (
           <motion.div
@@ -59,13 +59,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 className="border-1 rounded-lg object-cover ml-16 md:ml-20"
               />
               <div className="flex flex-col pl-4 md:pl-8">
-                <h3 className="text-lg md:text-xl lg:text-2xl font-bold">
-                  {item.title}
-                </h3>
-                <h4 className="text-base md:text-lg lg:text-xl font-medium text-neutral-700">
+                <h3 className="text-lg md:text-xl font-bold">{item.title}</h3>
+                <h4 className="text-base md:text-lg font-medium text-neutral-700">
                   {item.company}
                 </h4>
-                <h5 className="text-sm md:text-base lg:text-lg font-medium text-neutral-500">
+                <h5 className="text-sm md:text-base font-medium text-neutral-500">
                   {item.period}
                 </h5>
               </div>
@@ -80,7 +78,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           style={{
             height: height + "px",
           }}
-          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-gradient-to-b from-transparent from-0% via-neutral-200 to-transparent to-99% [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-gradient-to-b from-transparent from-0% via-neutral-200 to-transparent to-99% [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_85%,transparent_100%)]"
         >
           <motion.div
             style={{
